@@ -1,0 +1,18 @@
+#!/usr/bin/env php
+
+<?php
+
+use Insua\WeatherCli\Weather;
+
+if (file_exists(dirname(dirname(__FILE__)).'/vendor/autoload.php')) {
+    require_once dirname(dirname(__FILE__)).'/vendor/autoload.php';
+} else if (file_exists(dirname(__FILE__).'/../../../autoload.php')) {
+    require_once dirname(__FILE__).'/../../../autoload.php';
+} else {
+    throw new Exception('Can not load composer autoloader; Try running "composer install".');
+}
+
+if ($argc < 2) {
+   throw new Exception('Please input city code or city name');
+}
+$weather = new Weather($argv[1]);

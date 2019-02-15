@@ -1,0 +1,24 @@
+{
+    "name": "insua\/weather-cli",
+    "description": "an weather-cli to show icon and temperature",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "insua",
+            "email": "insua@sohu.com"
+        }
+    ],
+    "require": {
+        "php" : ">=7.0",
+        "guzzlehttp/guzzle": "^6.3",
+        "sabre/xml": "^2.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Insua\\WeatherCli\\": "src"
+        }
+    },
+    "bin": [
+      "bin/weather-cli"
+    ]
+}
