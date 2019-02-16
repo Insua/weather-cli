@@ -52,7 +52,7 @@ class Weather
     {
         $array = explode(':', $current);
         $icon = $this->getIcon(trim($array[1]));
-        echo $icon.$array[2].PHP_EOL;
+        echo $icon.$array[2];
     }
 
     public function getIcon($weather)
