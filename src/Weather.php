@@ -52,25 +52,27 @@ class Weather
     {
         $array = explode(':', $current);
         $icon = $this->getIcon(trim($array[1]));
-        echo $icon.$array[2];
+        echo $icon.' '.str_replace('C', '°C', $array[2]);
     }
 
     public function getIcon($weather)
     {
-        if(strpos('Cloudy', $weather) !== false || strpos('Dreary', $weather) !== false) {
+        if($weather == 'Cloudy' || $weather == 'Mostly Cloudy' || $weather == 'Dreary (Overcast)' || $weather == 'Fog') {
             return "";
-        } elseif (strpos('Sunny', $weather) !== false || strpos('Intermittent', $weather) !== false || strpos('Sunshine', $weather) !== false || strpos('Hot', $weather) !== false ) {
+        } elseif ($weather == 'Sunny' || $weather == 'Intermittent Clouds' || $weather == 'Mostly Sunny' || $weather == 'Partly Sunny' || $weather == 'Hazy Sunshine' || $weather == 'Hot' ) {
             return '';
-        } elseif (strpos('Showers', $weather) !== false || strpos('T-Storms', $weather) !== false || strpos('Rain', $weather) !== false) {
+        } elseif ($weather == 'Showers' || strpos('T-Storms', $weather) !== false || strpos('Rain', $weather) !== false) {
             return '';
         } elseif (strpos('Windy', $weather) !== false) {
             return '';
-        } elseif (strpos('Flurries', $weather) !== false || strpos('Snow', $weather) !== false || strpos('Ice', $weather) !== false || strpos('Sleet', $weather) !== false || strpos('Cold', $weather) !== false) {
+        } elseif (strpos('Flurries', $weather) !== false || strpos('Ice', $weather) !== false || strpos('Sleet', $weather) !== false || strpos('Cold', $weather) !== false) {
             return '';
         } elseif (strpos('Clear', $weather) !== false || strpos('Moonlight', $weather) !== false) {
             return '';
         } elseif (strpos('Thunderstorms', $weather) !== false) {
             return '';
+        } elseif (strpos('Snow', $weather) !== false) {
+            return '';
         }
         return '';
     }
