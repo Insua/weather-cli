@@ -52,7 +52,7 @@ class Weather
     {
         $array = explode(':', $current);
         $icon = $this->getIcon(trim($array[1]));
-        echo $icon.' '.str_replace('C', '°C', $array[2]);
+        echo $icon.str_replace('C', '°C', $array[2]);
     }
 
     public function getIcon($weather)
