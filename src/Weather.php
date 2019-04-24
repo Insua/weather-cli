@@ -61,18 +61,18 @@ class Weather
             return "";
         } elseif ($weather == 'Sunny' || $weather == 'Intermittent Clouds' || $weather == 'Mostly Sunny' || $weather == 'Partly Sunny' || $weather == 'Hazy Sunshine' || $weather == 'Hot' ) {
             return '';
-        } elseif ($weather == 'Showers' || strpos('T-Storms', $weather) !== false || strpos('Rain', $weather) !== false) {
-            return '';
-        } elseif (strpos('Windy', $weather) !== false) {
-            return '';
-        } elseif (strpos('Flurries', $weather) !== false || strpos('Ice', $weather) !== false || strpos('Sleet', $weather) !== false || strpos('Cold', $weather) !== false) {
-            return '';
-        } elseif (strpos('Clear', $weather) !== false || strpos('Moonlight', $weather) !== false) {
-            return '';
-        } elseif (strpos('Thunderstorms', $weather) !== false) {
-            return '';
-        } elseif (strpos('Snow', $weather) !== false) {
+        } elseif (strpos($weather, 'Snow') !== false) {
             return '';
+        } elseif ($weather == 'Showers' || strpos($weather, 'T-Storms') !== false || strpos($weather, 'Rain') !== false) {
+            return '';
+        } elseif (strpos($weather, 'Windy') !== false) {
+            return '';
+        } elseif (strpos($weather, 'Flurries') !== false || strpos($weather, 'Ice') !== false || strpos($weather, 'Sleet') !== false || strpos($weather, 'Cold') !== false) {
+            return '';
+        } elseif (strpos($weather, 'Clear') !== false || strpos($weather, 'Moonlight') !== false) {
+            return '';
+        } elseif (strpos($weather, 'Thunderstorms') !== false) {
+            return '';
         }
         return '';
     }
