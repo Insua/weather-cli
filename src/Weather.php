@@ -29,7 +29,7 @@ class Weather
         $client = new Client();
         try {
             $response = $client->get('http://rss.accuweather.com/rss/liveweather_rss.asp?metric=1&locCode='.$this->city,
-                ['timeout' => 5]);
+                ['timeout' => 60]);
             $body = $response->getBody();
             $this->getCurrentWeather((string)$body);
         } catch (ConnectException $exception) {
